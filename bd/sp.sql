@@ -36,7 +36,7 @@ end
 
 select * from recepcionReserva;
 
--- call procedure sp_registraReservaAutomovil;
+--  drop procedure sp_registraReservaAutomovil;
 delimiter |
 create procedure sp_registraReservaAutomovil(cli char(9), movil char(7),ini date,fin date)
 -- solo inserta los valores si antes consulto "sp_consultaAutomovilDisponible"
@@ -44,14 +44,14 @@ create procedure sp_registraReservaAutomovil(cli char(9), movil char(7),ini date
 begin
 -- 0 disponible
 -- 1 reservado
-if not exists(select * from reserva where idAuto = movil) then
+
 	insert into reserva values(null, cli, movil, ini, fin,'1');
-end if;
+
 end
 |
 -- call sp_consultaAutomovilDisponible ('2018-11-24', '2018-11-27');
 
--- call sp_registraReservaAutomovil ('G71962605','CC1-2AA','2018-11-24','2018-11-27');
+-- call sp_registraReservaAutomovil ('G71962605','CC1-2AA','2019-11-24','2019-11-27');
 
 select * from reserva;
 
