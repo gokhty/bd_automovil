@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2018 a las 09:40:43
+-- Tiempo de generación: 25-11-2018 a las 09:54:42
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -77,9 +77,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_registraReservaAutomovil`(cli ch
 begin
 -- 0 disponible
 -- 1 reservado
-if not exists(select * from reserva where idAuto = movil) then
+
 	insert into reserva values(null, cli, movil, ini, fin,'1');
-end if;
+
 end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_volverAbrirReserva`(id int)
@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   `fechaIni` date DEFAULT NULL,
   `fechaFin` date DEFAULT NULL,
   `estado` char(1) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `reserva`
@@ -189,7 +189,9 @@ CREATE TABLE IF NOT EXISTS `reserva` (
 INSERT INTO `reserva` (`id`, `idCliente`, `idAuto`, `fechaIni`, `fechaFin`, `estado`) VALUES
 (1, 'G71962605', 'ABC-931', '2018-11-24', '2018-11-25', '1'),
 (2, 'G71962605', 'CC1-2AA', '2018-12-01', '2018-12-02', '1'),
-(3, 'G71962605', 'ABC-A32', '2018-11-27', '2018-11-28', '1');
+(3, 'G71962605', 'ABC-A32', '2018-11-27', '2018-11-28', '1'),
+(4, 'G71962605', 'CC1-2AA', '2019-11-24', '2019-11-27', '1'),
+(5, 'G71962605', 'CC1-2AA', '2018-11-06', '2018-11-29', '1');
 
 --
 -- Índices para tablas volcadas
@@ -242,7 +244,7 @@ ALTER TABLE `recepcionreserva`
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --
