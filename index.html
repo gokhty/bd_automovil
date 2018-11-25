@@ -42,7 +42,7 @@ Fin <input type="date"  ng-model="fin" id="fin">
 <section><h3>Services</h3></section>
 </hgroup>
 <hgroup>
-<section><h3>Contacts</h3></section>
+<section><h3>Registro</h3></section>
 </hgroup>
 </div>
 <main>
@@ -95,15 +95,12 @@ Fin <input type="date"  ng-model="fin" id="fin">
 <hgroup>
 <aside>
 <article>
-<p>Name</p>
-<p>E-mail</p>
-<p>Message</p>
-<p></article>
-<article>
-<p><input type="text" placeholder="name"></p>
-<p><input type="text"placeholder="E-mail"></p>
-<p><textarea cols="21" rows="6"placeholder="Message"></textarea></p>
-<p></article>
+<form action="on/registraUsu.php" method="post">
+<p>Licencia <input type="text" placeholder="Licencia" name="lic"></p>
+<p>Password <input type="password"placeholder="password" name="pass"></p>
+<p><input type="submit" value="Registrar"/></p>
+</form>
+</article>
 </aside>
 </hgroup>
 </main>

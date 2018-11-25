@@ -26,8 +26,8 @@ automovil.controller('cargar', function($scope, $http) {
 		document.querySelector(".modal").style.display="block";
 	}
 	$scope.reservar = function() {
-		//var x = document.getElementById("ini").value;
-		//var u = document.getElementById("fin").value;
+		var x = document.getElementById("ini").value;
+		var u = document.getElementById("fin").value;
 		//var matric = document.querySelector("#matri").value;
 		$http({
 		method: 'POST',
@@ -35,7 +35,7 @@ automovil.controller('cargar', function($scope, $http) {
 		data: {usu: $scope.usu, matric: g_matricula, ini:$scope.ini, fin: $scope.fin}
 		}).then(function(response) {
 		$scope.mensaje = response.data.vavava;
-		//alert("Datos de reserva"+"\n Licencia: "+$scope.usu+"\n Auto: "+g_matricula+"\n Fecha inicio: "+x+"\n Fecha fin: "+u);
+		alert("Datos de reserva"+"\n Licencia: "+$scope.usu+"\n Auto: "+g_matricula+"\n Fecha inicio: "+x+"\n Fecha fin: "+u);
 		location.reload();
 		});
 	}

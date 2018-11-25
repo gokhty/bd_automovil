@@ -57,7 +57,7 @@ body>main>hgroup>aside>article>p{margin:1em;}
 main>hgroup>aside>article:first-child{display:none;}
 li{list-style: none;}
 .modal{
-/*display:none;*/
+display:none;
 width:100%;
 height:100%;
 background: rgba(0,0,0,0.6);
