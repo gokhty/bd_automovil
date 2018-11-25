@@ -8,6 +8,12 @@ automovil.controller('cargar', function($scope, $http) {
 		data: { ini: $scope.ini, fin: $scope.fin }
 		}).then(function(response) {
 		$scope.autos = response.data.autosdisponibles;
+		if($scope.autos == null){
+			alert("No hay autos");
+		}
+		if($scope.autos == ""){
+			alert("No hay autos");
+		}
 		});
 	}
 	$scope.validaUsu = function() {
@@ -38,5 +44,8 @@ automovil.controller('cargar', function($scope, $http) {
 		alert("Datos de reserva"+"\n Licencia: "+$scope.usu+"\n Auto: "+g_matricula+"\n Fecha inicio: "+x+"\n Fecha fin: "+u);
 		location.reload();
 		});
+	}
+	$scope.cerrarModal = function() {
+		document.querySelector(".modal").style.display="none";
 	}
 });

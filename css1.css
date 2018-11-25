@@ -99,3 +99,10 @@ background:rgba(0,0,0,0.9);
 color:#fff;
 border:0;
 }
+.modal .cm{
+direction:rtl; cursor:default; margin:3px;
+}
+.modal .cm {
+color:#fff; direction:rtl; font-family:arial; cursor:default; margin:3px;
+padding:3px;
+}

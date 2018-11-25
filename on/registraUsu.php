@@ -11,7 +11,7 @@ try{
 	$query->execute();
 	$res = $query->fetch(PDO::FETCH_ASSOC);
 	$num = $res['val'][0];
-	if(num == 1){
+	if($num != 1){
 		$query3 = $db->prepare('insert into cliente(licencia, pass)values(?,?)');
 		$query3->bindParam(1,$lic);
 		$query3->bindParam(2,$pass);
@@ -23,6 +23,6 @@ try{
 }catch(Exception $e){
 	$msj = "Error";
 }finally{
-	header('Location:../index.html?msj='.$msj);
+	header('Location:../index.html?msj1='.$msj);
 }
 ?>

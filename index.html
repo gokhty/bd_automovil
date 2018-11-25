@@ -24,7 +24,7 @@
 <li onclick="ver3('div>hgroup','0');ver4('main>hgroup','0')">Home
 <li onclick="ver3('div>hgroup','1');ver4('main>hgroup','1')">About us
 <li onclick="ver3('div>hgroup','2');ver4('main>hgroup','2')">Services
-<li onclick="ver3('div>hgroup','3');ver4('main>hgroup','3')">Contacts
+<li onclick="ver3('div>hgroup','3');ver4('main>hgroup','3')">Registro
 </ul>
 </nav>
 <hgroup>
@@ -59,6 +59,7 @@ Fin <input type="date"  ng-model="fin" id="fin">
 </article>
 <div class="modal">
 <div>
+<p class="cm" ng-click="cerrarModal()">X</p>
 <input type="text" ng-model="usu" placeholder="Licencia"/>
 <input type="password" ng-model="pass" placeholder="Clave"/>
 <input type="submit" ng-click="validaUsu()" value="Validar"/>
@@ -96,8 +97,8 @@ Fin <input type="date"  ng-model="fin" id="fin">
 <aside>
 <article>
 <form action="on/registraUsu.php" method="post">
-<p>Licencia <input type="text" placeholder="Licencia" name="lic"></p>
-<p>Password <input type="password"placeholder="password" name="pass"></p>
+<p>Licencia <input type="text" placeholder="Licencia" name="lic" required></p>
+<p>Password <input type="password"placeholder="password" name="pass" id="txtpass2" required></p>
 <p><input type="submit" value="Registrar"/></p>
 </form>
 </article>
@@ -114,4 +115,23 @@ Fin <input type="date"  ng-model="fin" id="fin">
 var automovil = angular.module('resautos', []);
 </script>
 <script type="text/javascript" src="js/cargarautos.js"></script>
+<script>
+function iniciar(){
+	
+	var query = window.location.search.substring(1);
+       // var vars = query.split("&");
+        var vars2 = query.split("=");
+		
+		if(query == ""){
+			 document.getElementById("msj1").innerHTML ="";
+		}else{
+			if(vars2[0] == "msj1"){
+				alert(vars2[1]);
+			}
+			 
+		}
+ }
+ window.addEventListener("load", iniciar, false);
+ 
+</script>
 </html>
