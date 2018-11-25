@@ -1,0 +1,58 @@
+header>div{text-align:center;}
+div>header{width:100%;}
+div>nav{width:100%;}
+nav>ul{margin-right:3em;}
+nav>ul>li{list-style:none;text-align:center;}
+nav>ul>li~li{display:none;}
+div>hgroup{text-align:center;}
+body>main{width:100%;}
+footer>p{text-align:center}
+@media all and (min-width: 480px){
+body>main>hgroup>aside>article:first-child{display:inline-block;}
+}
+@media all and (min-width: 640px){
+div>nav{width:51%;margin:0 auto;}main{width:51%;margin:0 auto;}hgroup{width:51%;margin:0 auto;}
+nav>ul{
+text-align:center;
+padding:0 0 0 6px; 
+}
+nav>ul>li {
+display: inline-block;
+list-style: none;
+cursor: pointer;
+padding:6px;
+}
+nav>ul>li:first-child{display:none;}
+nav>ul>li~li{display:inline-block;}
+}
+@media all and (min-width: 720px){
+div>hgroup>section>h3{font-size:30px;padding:2em 0 15px 0;}
+}
+*{margin:0;}
+body{
+margin:3px;
+}
+body>div{
+background-image:url('imagenes/idf.jpg');
+background-repeat: no-repeat; background-size: cover;
+}
+header{margin-bottom:6px;}
+header h6{font-family: Corbel;}
+nav>ul>li{font:menu;color:#fff;padding:6px;cursor:pointer;}
+nav{background:#000;}
+div>hgroup>section>h3{padding:1em 0 7px 0;}
+div>hgroup{color:#fff;background-color: rgba(0,0,0,0.3);}
+div>hgroup>section,div>hgroup>article{padding:6px;}
+main{margin-top:1em;}
+main>hgroup>article>p{font-family:Gill Sans MT;padding:6px 0 6px 0;text-align:justify;font-size:15px;}
+main>hgroup>section{padding:1em 0 6px 6px;}
+input{margin:15px;}
+footer{margin-top:1em; border-top: 1px dotted #000;padding:1em 0 1em 0;}
+footer>p{text-align:center;font:9px Arial, Helvetica, sans-serif;}
+div>hgroup~hgroup{text-align:left;display:none;}
+body>main>hgroup{display:none;}body>main>hgroup:first-child{display:block;}
+body>main>hgroup>aside>article>p>input,body>main>hgroup>aside>article>p>textarea{font:menu;margin:0;}
+body>main>hgroup>aside>article{display:inline-block;vertical-align:top;}
+body>main>hgroup>aside>article>p{margin:1em;}
+main>hgroup>aside>article:first-child{display:none;}
+li{list-style: none;}

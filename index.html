@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="iso-8859-1">
+<meta name="description" content="Ejemplo de HTML5">
+<meta name="keywords" content="HTML5, CSS3, JavaScript">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gokhty</title>
+<link rel="stylesheet" href="css1.css">
+<script src="js1.js"></script>
+<script src="js/angular.min.js"></script>
+</head>
+<body ng-app="resautos" ng-controller="cargar">
+<div>
+<header>
+<div>
+<h2>Interior Design</h2>
+<h6>Ideas For You</h6>
+</div>
+</header>
+<nav>
+<ul>
+<li onclick="ver('nav>ul>li~li')">Menu
+<li onclick="ver3('div>hgroup','0');ver4('main>hgroup','0')">Home
+<li onclick="ver3('div>hgroup','1');ver4('main>hgroup','1')">About us
+<li onclick="ver3('div>hgroup','2');ver4('main>hgroup','2')">Services
+<li onclick="ver3('div>hgroup','3');ver4('main>hgroup','3')">Contacts
+</ul>
+</nav>
+<hgroup>
+<section><h3>Beauty & style</h3></section>
+<article><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+<input type="submit" ng-click="listaOtroUsuario()" value="Read more">
+</article>
+</hgroup>
+<hgroup>
+<section><h3>About us</h3></section>
+</hgroup>
+<hgroup>
+<section><h3>Services</h3></section>
+</hgroup>
+<hgroup>
+<section><h3>Contacts</h3></section>
+</hgroup>
+</div>
+<main>
+<hgroup ng-repeat="x in autos">
+<section><h3>{{x.modelo}}</h3></section>
+<article>
+<img src="imagenes/idf.jpg" width="190" height="90" align="right" style="margin:0 6px 21px;">
+<p>
+<li>{{x.matricula}}
+<li>{{x.anno}}
+<li>{{x.precio}}
+</p>
+<input type="submit" value="Read more">
+</article>
+<hr>
+<section><h3>Services</h3></section>
+<article><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi..</p>
+<input type="submit" value="Read more">
+</article>
+<hr>
+</hgroup>
+<hgroup>
+<article>
+<img src="imagenes/idf.jpg" width="190" height="90" align="left" style="margin:0 21px 6px 0;">
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </p>
+</article>
+<article>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+</article>
+</hgroup>
+<hgroup>
+<article>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+</article>
+</hgroup>
+<hgroup>
+<aside>
+<article>
+<p>Name</p>
+<p>E-mail</p>
+<p>Message</p>
+<p></article>
+<article>
+<p><input type="text" placeholder="name"></p>
+<p><input type="text"placeholder="E-mail"></p>
+<p><textarea cols="21" rows="6"placeholder="Message"></textarea></p>
+<p></article>
+</aside>
+</hgroup>
+</main>
+<footer>
+<p>Copyright © 2018. Designed by <a href="#" title="">Website Templates</a></p>
+<p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#" title=""><abbr title="">CSS</abbr></a></p>
+<p>Supported by <a href="#" target="_blank">gokhty</a></p>
+</footer>
+</body>
+<script>
+var automovil = angular.module('resautos', []);
+</script>
+<script type="text/javascript" src="js/cargarautos.js"></script>
+</html>
