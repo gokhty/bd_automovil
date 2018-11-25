@@ -20,18 +20,23 @@ automovil.controller('cargar', function($scope, $http) {
 		$scope.vvv = response.data.vavava;
 		});
 	}
-	$scope.seleccionar = function() {
+	var g_matricula;
+	$scope.seleccionar = function(x) {
+		g_matricula = x;
 		document.querySelector(".modal").style.display="block";
 	}
 	$scope.reservar = function() {
+		var x = document.getElementById("ini").value;
+		var u = document.getElementById("fin").value;
 		//var matric = document.querySelector("#matri").value;
-		alert($scope.usu+" | "+$scope.matric+" | "+$scope.ini+" | "+$scope.fin);
 		$http({
 		method: 'POST',
 		url: 'on/reservar.php',
-		data: {usu: $scope.usu, matric: $scope.matric, ini:$scope.ini, fin: $scope.fin}
+		data: {usu: $scope.usu, matric: g_matricula, ini:$scope.ini, fin: $scope.fin}
 		}).then(function(response) {
 		$scope.mensaje = response.data.vavava;
+		alert("Datos de reserva"+"\n Licencia: "+$scope.usu+"\n Auto: "+g_matricula+"\n Fecha inicio: "+x+"\n Fecha fin: "+u);
+		location.reload();
 		});
 	}
 });

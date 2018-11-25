@@ -30,8 +30,8 @@
 <hgroup>
 <section><h3>Busca por fecha</h3></section>
 <article>
-Inicio <input type="date"  ng-model="ini">
-Fin <input type="date"  ng-model="fin">
+Inicio <input type="date"  ng-model="ini" id="ini">
+Fin <input type="date"  ng-model="fin" id="fin">
 <input type="submit" ng-click="listaOtroUsuario()" value="Consultar">
 </article>
 </hgroup>
@@ -51,24 +51,23 @@ Fin <input type="date"  ng-model="fin">
 <section><h3>{{x.modelo}}</h3></section>
 <img src="{{x.foto}}" width="190" height="90" align="right" style="margin:0 6px 21px;">
 <p>
-<input type="text" ng-model="matric" value="{{x.matricula}}"/>
 <li>{{x.matricula}}
 <li>{{x.anno}}
 <li>{{x.precio}}
 </p>
-<input type="submit" ng-click="seleccionar()" value="Reservar">
+<input type="submit" ng-click="seleccionar(x.matricula)" value="Reservar" />
 </article>
 <div class="modal">
 <input type="text" ng-model="usu" placeholder="Licencia"/>
 <input type="password" ng-model="pass" placeholder="Clave"/>
 <div style="display:inline">
 <input type="submit" ng-click="validaUsu()" value="Validar"/>
-<span ng-repeat="x in vvv">
-<h3 ng-if="x.val == 1">Correcto, ahora puede reservar <button ng-click="reservar()">Reserva aquí</button></h3>
-<h3 ng-if="x.val != 1">Incorrecto, intente otra vez</h3>
+<span ng-repeat="y in vvv">
+<h3 ng-if="y.val == 1">Correcto, ahora puede reservar <button ng-click="reservar()">Reserva aquí</button></h3>
+<h3 ng-if="y.val != 1">Incorrecto, intente otra vez</h3>
 </span>
-<span ng-repeat="x in mensaje">
-<h3>{{x.val}}</h3>
+<span ng-repeat="z in mensaje">
+<h3>{{z.val}}</h3>
 </span>
 </div>
 </div>

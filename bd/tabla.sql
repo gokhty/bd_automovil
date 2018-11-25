@@ -16,16 +16,19 @@ create table automovil(
 matricula char(7) primary key,
 modelo varchar(45),
 anno int,
-precio double
+precio double,
+foto varchar(45)
 )
 ;
 create table reserva(
 id int primary key auto_increment,
-idCliente char(9) references cliente,
-idAuto char(7) references automovil,
+idCliente char(9),
+idAuto char(7),
 fechaIni date,
 fechaFin date,
-estado char(1)
+estado char(1),
+foreign key(idCliente)references cliente(licencia),
+foreign key(idAuto)references automovil(matricula)
 )
 ;
 create table recepcionista(
@@ -45,9 +48,9 @@ foreign key(idRecepcionista) references recepcionista(dni)
 ;
 
 insert into automovil values
-('ABC-931','sony 3','2017',300),
-('ABC-A32','pun racer','2007',400),
-('CC1-2AA','orion 45','2001',100)
+('ABC-931','sony 3','2017',300,'image/amarillo.jpg'),
+('ABC-A32','pun racer','2007',400,'image/blanco.jpg'),
+('CC1-2AA','orion 45','2001',100,'image/negro.jpg')
 ;
 
 insert into cliente  (licencia,pass)values('G71962605','1234')

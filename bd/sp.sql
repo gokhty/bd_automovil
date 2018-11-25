@@ -1,21 +1,24 @@
-drop procedure sp_consultaAutomovilDisponible;
+-- call procedure sp_consultaAutomovilDisponible;
 delimiter |
 create procedure sp_consultaAutomovilDisponible(ini date, fin date)
 begin
 select * from automovil where matricula not in(select idAuto from reserva r where 
-r.estado = '1'
-and
+ini between fechaIni and fechaFin
+or
+fin between fechaIni and fechaFin
+or 
 fechaIni >= ini and fechaFin <=fin
-);
+and
+r.estado = '1');
 end
 |
 -- select * from reserva where fechaIni >= '2018-04-30' and fechaFin <= '2018-09-03'
 
 -- select * from reserva
 
-call sp_consultaAutomovilDisponible ('2018-01-02', '2018-01-09');
+-- call sp_consultaAutomovilDisponible ('2018-01-02', '2018-01-09');
 
-call sp_consultaAutomovilDisponible ('2018-11-24', '2018-11-27');
+-- call sp_consultaAutomovilDisponible ('2018-11-24', '2018-11-27');
 
 delimiter |
 create procedure sp_recepcionReserva(cli char(9),idR int)
@@ -28,12 +31,12 @@ on rr.idReserva = r.id
 where rr.estado = 0 and (r.idCliente = cli or rr.idReserva = idR) order by fechaIni desc;
 end
 |
-call sp_recepcionReserva ('G71962605' ,'1');
+-- call sp_recepcionReserva ('G71962605' ,'1');
 
 
 select * from recepcionReserva;
 
-drop procedure sp_registraReservaAutomovil;
+-- call procedure sp_registraReservaAutomovil;
 delimiter |
 create procedure sp_registraReservaAutomovil(cli char(9), movil char(7),ini date,fin date)
 -- solo inserta los valores si antes consulto "sp_consultaAutomovilDisponible"
@@ -46,9 +49,9 @@ if not exists(select * from reserva where idAuto = movil) then
 end if;
 end
 |
-call sp_consultaAutomovilDisponible ('2018-11-24', '2018-11-27');
+-- call sp_consultaAutomovilDisponible ('2018-11-24', '2018-11-27');
 
-call sp_registraReservaAutomovil ('G71962605','CC1-2AA','2018-11-24','2018-11-27');
+-- call sp_registraReservaAutomovil ('G71962605','CC1-2AA','2018-11-24','2018-11-27');
 
 select * from reserva;
 
@@ -62,7 +65,7 @@ idCliente = cli order by fechaIni desc;
 end
 |
 
-call sp_consultaReserva('G71962605');
+-- call sp_consultaReserva('G71962605');
 
 delimiter |
 create procedure sp_cancelarReserva(id int)
@@ -71,7 +74,7 @@ begin
 update reserva set estado = '0' where id =  id;
 end
 |
-call sp_cancelarReserva (1);
+-- call sp_cancelarReserva (1);
 delimiter |
 create procedure sp_volverAbrirReserva(id int)
 -- ejecutar sp_consultaReserva para ver que reserva cancelar
@@ -79,13 +82,13 @@ begin
 update reserva set estado = '1' where id =  id;
 end
 |
-call sp_volverAbrirReserva (1);
+-- call sp_volverAbrirReserva (1);
 
-drop procedure sp_checkInAuto;
+-- call procedure sp_checkInAuto;
 delimiter |
 create procedure sp_checkInAuto(idR int,idRep char(8))
 -- consulta reserva por cliente
--- procedimiento call sp_consultaReserva('G71962605')
+-- procedimiento -- call sp_consultaReserva('G71962605')
 begin
 -- estado
 -- 0 activo
@@ -93,16 +96,16 @@ begin
 insert into recepcionReserva values (null,idR, idRep, 0);
 end
 |
--- call sp_consultaReserva('G71962605')
+-- -- call sp_consultaReserva('G71962605')
 -- 5 G71962605	CC1-2AA	2018-06-10	2018-06-12	1
 -- se obtine el dni de la recepcionista -- select * from recepcionista
 
 -- select * from  recepcionReserva
-call sp_checkInAuto( 1,'12345678');
+-- call sp_checkInAuto( 1,'12345678');
 delimiter |
 create procedure sp_checkOutAuto(idR int,idRep char(8))
 -- consulta reserva por cliente
--- procedimiento call sp_recepcionReserva 'G71962605' ,1
+-- procedimiento -- call sp_recepcionReserva 'G71962605' ,1
 begin
 -- estado
 -- 0 activo
@@ -110,4 +113,4 @@ begin
 update recepcionReserva set estado = 1 where idReserva = idR;
 end
 |
-call sp_checkOutAuto( 1,'12345678')
+-- call sp_checkOutAuto( 2,'12345678')
