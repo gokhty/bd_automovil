@@ -42,7 +42,7 @@ automovil.controller('cargar', function($scope, $http) {
 		}).then(function(response) {
 		$scope.mensaje = response.data.vavava;
 		alert("Datos de reserva"+"\n Licencia: "+$scope.usu+"\n Auto: "+g_matricula+"\n Fecha inicio: "+x+"\n Fecha fin: "+u);
-		location.reload();
+		location.href = "/bd_automovil/";
 		});
 	}
 	$scope.cerrarModal = function() {
