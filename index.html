@@ -14,8 +14,8 @@
 <div>
 <header>
 <div>
-<h2>Interior Design</h2>
-<h6>Ideas For You</h6>
+<h2>Autos</h2>
+<h6>Reserva el que desees</h6>
 </div>
 </header>
 <nav>
@@ -28,9 +28,11 @@
 </ul>
 </nav>
 <hgroup>
-<section><h3>Beauty & style</h3></section>
-<article><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-<input type="submit" ng-click="listaOtroUsuario()" value="Read more">
+<section><h3>Busca por fecha</h3></section>
+<article>
+Inicio <input type="date"  ng-model="ini">
+Fin <input type="date"  ng-model="fin">
+<input type="submit" ng-click="listaOtroUsuario()" value="Consultar">
 </article>
 </hgroup>
 <hgroup>
@@ -44,23 +46,26 @@
 </hgroup>
 </div>
 <main>
-<hgroup ng-repeat="x in autos">
+<hgroup>
+<article ng-repeat="x in autos">
 <section><h3>{{x.modelo}}</h3></section>
-<article>
-<img src="imagenes/idf.jpg" width="190" height="90" align="right" style="margin:0 6px 21px;">
+<img src="{{x.foto}}" width="190" height="90" align="right" style="margin:0 6px 21px;">
 <p>
 <li>{{x.matricula}}
 <li>{{x.anno}}
 <li>{{x.precio}}
 </p>
-<input type="submit" value="Read more">
+<input type="submit" ng-click="selecionar(x.matricula)" value="Reservar">
 </article>
-<hr>
-<section><h3>Services</h3></section>
-<article><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi..</p>
-<input type="submit" value="Read more">
-</article>
-<hr>
+<div>
+<input type="text" ng-model="usu" name="usu"/>
+<input type="password" ng-model="pass" name="pass"/>
+<input type="submit" ng-click="validaUsu()" value="Validar"/>
+<span ng-repeat="x in vvv">
+<h6 ng-if="x.val == 1">:)</h6>
+<h6 ng-if="x.val != 1">:(</h6>
+</span>
+</div>
 </hgroup>
 <hgroup>
 <article>
