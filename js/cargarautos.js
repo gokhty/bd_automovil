@@ -20,4 +20,18 @@ automovil.controller('cargar', function($scope, $http) {
 		$scope.vvv = response.data.vavava;
 		});
 	}
+	$scope.seleccionar = function() {
+		document.querySelector(".modal").style.display="block";
+	}
+	$scope.reservar = function() {
+		//var matric = document.querySelector("#matri").value;
+		alert($scope.usu+" | "+$scope.matric+" | "+$scope.ini+" | "+$scope.fin);
+		$http({
+		method: 'POST',
+		url: 'on/reservar.php',
+		data: {usu: $scope.usu, matric: $scope.matric, ini:$scope.ini, fin: $scope.fin}
+		}).then(function(response) {
+		$scope.mensaje = response.data.vavava;
+		});
+	}
 });

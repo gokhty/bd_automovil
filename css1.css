@@ -56,3 +56,21 @@ body>main>hgroup>aside>article{display:inline-block;vertical-align:top;}
 body>main>hgroup>aside>article>p{margin:1em;}
 main>hgroup>aside>article:first-child{display:none;}
 li{list-style: none;}
+.modal{
+display:none;
+width:100%;
+height:100%;
+background: rgba(0,0,0,0.6);
+position:fixed;
+top:0; 
+left:0;
+}
+.modal h3{
+color:red;
+size:30px;
+}
+.modal input{
+padding:1em;
+border-radius:1em;
+border:1px solid black;
+}
