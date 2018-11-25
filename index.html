@@ -32,7 +32,7 @@
 <article>
 Inicio <input type="date"  ng-model="ini" id="ini">
 Fin <input type="date"  ng-model="fin" id="fin">
-<input type="submit" ng-click="listaOtroUsuario()" value="Consultar">
+<input type="button" ng-click="listaOtroUsuario()" value="Consultar">
 </article>
 </hgroup>
 <hgroup>
@@ -58,9 +58,9 @@ Fin <input type="date"  ng-model="fin" id="fin">
 <input type="submit" ng-click="seleccionar(x.matricula)" value="Reservar" />
 </article>
 <div class="modal">
+<div>
 <input type="text" ng-model="usu" placeholder="Licencia"/>
 <input type="password" ng-model="pass" placeholder="Clave"/>
-<div style="display:inline">
 <input type="submit" ng-click="validaUsu()" value="Validar"/>
 <span ng-repeat="y in vvv">
 <h3 ng-if="y.val == 1">Correcto, ahora puede reservar <button ng-click="reservar()">Reserva aquí</button></h3>
